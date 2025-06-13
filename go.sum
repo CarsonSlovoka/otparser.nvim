@@ -1,0 +1,4 @@
+github.com/CarsonSlovoka/go-font v0.0.0-20250613070700-e11608185964 h1:Nw2MbCB9SdEo8VREvrZVQQUSUTro6QNZYff+pHx1pD8=
+github.com/CarsonSlovoka/go-font v0.0.0-20250613070700-e11608185964/go.mod h1:jZQBboIY/IaXUcDi9nT6bx1ahfwaDSs8Rt6SusFuzhU=
+golang.org/x/text v0.14.0 h1:ScX5w1eTa3QqT8oi6+ziP7dTV1S2+ALU0bI+0zXKWiQ=
+golang.org/x/text v0.14.0/go.mod h1:18ZOQIKpY8NJVqYksKHtTdi31H5itFRjB5/qKTNYzSU=
