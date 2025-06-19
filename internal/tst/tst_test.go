@@ -1,3 +1,5 @@
+// go test -v
+
 package tst_test
 
 import (
@@ -62,8 +64,10 @@ func Example_format() {
 
 	fmt.Println(output)
 	// Output:
+	// - name: MyFont
+	//
 	// # tables.head
-	// - version: 1
+	// - version: 1.0
 	// - unitsPerEm: 1000
 	//
 	// # tables.name.records: platformID | encodingID | nameID | string
