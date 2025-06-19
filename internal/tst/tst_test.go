@@ -52,7 +52,7 @@ func Example_format() {
 	// 配置輸出格式
 	ts := tst.New(&tst.Config{
 		Delimiter:      " | ",
-		HeaderPrefix:   "\n# ",
+		HeaderPrefix:   "# ",
 		KeyValuePrefix: "- ",
 	})
 
@@ -65,7 +65,6 @@ func Example_format() {
 	fmt.Println(output)
 	// Output:
 	// - name: MyFont
-	//
 	// # tables.head
 	// - version: 1.0
 	// - unitsPerEm: 1000
