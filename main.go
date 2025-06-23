@@ -37,5 +37,11 @@ func main() {
 	_, _ = f.GetTable(tag.Head)
 	_, _ = f.GetTable(tag.Maxp)
 	_, _ = f.GetTable(tag.OS2)
+
+	f.Tables[tag.Loca] = nil // 此表格沒什麼好看的，只記錄index，所以移除
+
+	// 移除其他數據
+	f.GlyphOrder = nil // 這個數據也很大，如果不想要也可以拿掉
+
 	outputProcess(f)
 }
