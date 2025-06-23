@@ -4,24 +4,31 @@ package main
 
 import (
 	"fmt"
-	"os"
-
 	"github.com/CarsonSlovoka/go-font/v1/lib/ttlib/ttfont"
+	"github.com/CarsonSlovoka/go-font/v1/type"
 	"github.com/CarsonSlovoka/otparser.nvim/internal/tst"
+	"os"
 )
+
+type Font struct {
+	Header  ttfont.TableHeader
+	Records []t.TableRecord
+}
 
 func outputProcess(f *ttfont.File) {
 	ts := tst.New(tst.NewConfig(" | ", "\n# ", "- "))
-	fmt.Printf("@TableHeader\n\n")
-	tableHeader, _ := ts.Format(f.TTFont.TableHeader)
-	fmt.Println(tableHeader)
+
+	var copyFont Font
+	copyFont.Header = f.TTFont.TableHeader
 
 	// tableRecords, _ := ts.Format(f.TTFont.TableRecords) -- 用不了會被報錯
-	fmt.Printf("\n@TableRecords\n\n")
-	for _, tr := range f.TTFont.TableRecords {
-		tableRecords, _ := ts.Format(tr)
-		fmt.Println(tableRecords)
+	fmt.Printf("\n@Table\n\n")
+	copyFont.Records = make([]t.TableRecord, len(f.TTFont.TableRecords))
+	for i := range f.TTFont.TableRecords {
+		copyFont.Records[i] = *f.TTFont.TableRecords[i]
 	}
+	headerStr, _ := ts.Format(copyFont)
+	fmt.Println(headerStr)
 
 	for tagName := range f.Tables {
 		table := f.Tables[tagName]
