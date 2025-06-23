@@ -1,5 +1,6 @@
 // go run .
 // go build -o otparser .
+// go build -o otparser.exe . // windows需要明確標示出副檔名, 儘管vim.system({"otparser"})能省略附檔名，但在執行的時候還是需要明確的標示
 // sudo ln -siv $(realpath otparser) /usr/bin/
 // which otparser
 
